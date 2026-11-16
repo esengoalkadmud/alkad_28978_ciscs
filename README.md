@@ -1,4 +1,4 @@
-# Culinary Inventory & Spoilage Control System (CISCS)
+# Culinary Inventory & Spoilage Control System (CISCS).
 
 **Student Name:** MUDAHINYUKA ESENGO Alkad
 **Student ID:** 28978
