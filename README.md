@@ -1,3 +1,61 @@
+# Culinary Inventory & Spoilage Control System (CISCS)
+
+**Student Name:** MUDAHINYUKA ESENGO Alkad
+**Student ID:** 28978
+**Course:** INSY 8311 - Database Development with PL/SQL
+**Instructor:** Eric Maniraguha
+
+## 1. Problem Statement
+Restaurants lose significant revenue due to ingredient spoilage and untracked inventory. Many rely on manual tracking, leading to unnoticed spoilage, inaccurate stock levels, and inefficient reordering.
+
+## 2. Objectives
+- **Main Objective:** Develop an automated PL/SQL database system to track restaurant inventory and minimize food waste.
+- **Specific Objectives:**
+  1. Track ingredient quantities, shelf-life, and suppliers.
+  2. Automate stock deduction based on daily menu sales.
+  3. Generate automated reorder alerts and spoilage logs.
+
+## 3. Data Source
+Synthetically generated dataset containing 500 records of restaurant orders, ingredients, and suppliers. (Formatted as a messy CSV to demonstrate normalization).
+- **Dataset Card:** [data/dataset_card.md](data/dataset_card.md)
+
+## 4. Planned Innovation
+**Option:** Analytics Dashboard
+**Tool:** Power BI (or Tableau)
+**Description:** A live dashboard connected to the Oracle database to visualize current stock levels, expiring items, and monthly waste costs for management.
+
+## 5. Planned Database Tables (3NF)
+- `Suppliers` (SupplierID, Name)
+- `Ingredients` (IngredientID, Name, SupplierID, Current_Stock, Min_Threshold)
+- `Orders` (OrderID, OrderDate, TotalPrice)
+- `Menu_Items` (MenuItemID, Name, Price)
+- `Order_Items` (OrderID, MenuItemID, IngredientID, Quantity)
+
+## 6. Planned PL/SQL Features
+- **Procedures:** `process_sale` (deducts stock), `generate_purchase_order` (compiles low-stock items).
+- **Functions:** `calculate_inventory_value`, `get_spoilage_rate`.
+- **Triggers:** `trg_auto_spoilage_log` (logs expired food), `trg_min_stock_alert` (flags low stock).
+- **Cursors & Bulk Processing:** Explicit cursors for expiring items report; `BULK COLLECT` and `FORALL` for end-of-day sales batch processing.
+- **Exceptions:** Custom `RAISE_APPLICATION_ERROR` for out-of-stock sales.
+
+## 7. References (APA)
+*(We will fill this in next)*
+
+---
+## Phase I – Business Process Modeling
+- **Selected Business Process:** Culinary Inventory & Spoilage Control
+- **Modeling Tool Used:** draw.io
+- **Published Diagram Link:** [PASTE YOUR LINK HERE]
+- **Process Explanation:** [docs/business_process/business_process_explanation.pdf](docs/business_process/business_process_explanation.pdf)
+
+## Phase II – Data Sourcing & Normalization
+- **Normalization Proof:** [docs/design/normalization.md](docs/design/normalization.md)
+- **ERD Diagram:** [docs/design/erd.png](docs/design/erd.png)
+- **Data Dictionary:** [docs/design/data_dictionary.md](docs/design/data_dictionary.md)
+
+
+
+
 ### Phase I – Business Process Modeling
 - **Selected Business Process:** Culinary Inventory & Spoilage Control
 - **Modeling Tool Used:** draw.io
